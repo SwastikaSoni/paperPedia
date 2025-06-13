@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+/* src/App.css or src/index.css */
+body {
+    font-family: 'Poppins';
+    color: #333;
+}
+
+.nav-link {
+    font-weight: 400;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+
+.nav-link:hover {
+    color: #cdcdcd;
+}
+
+@media (max-width: 1024px) {
+    .nav-link {
+        font-size: 0.7rem;
+    }
+
+    .bell-icon {
+        width: 3rem;
+        height: 1.5rem;
+    }
+}
