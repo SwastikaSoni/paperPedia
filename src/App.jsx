@@ -1,12 +1,13 @@
 import './App.css'
-import Navbar from './assets/components/Navbar';
+import Home from './assets/screens/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
   return (
     <>
       <div >
-        <Navbar />
+        <Home />
       </div>
     </>
   )

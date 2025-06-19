@@ -35,7 +35,7 @@ const Navbar = () => {
                         className="px-10 py-2 rounded-lg text-[#333] placeholder-gray-400 
                         border-2 border-[#cdcdcd] focus:border-[#333] hover:border-[#a5a5a5] focus:outline-none w-full md:w-64"
                     />
-                    <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
+                    <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                 </div>
 
                 {/* Search Icon for Small Screens */}
