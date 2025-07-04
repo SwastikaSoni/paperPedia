@@ -2,10 +2,10 @@ import { Linkedin, Github, Instagram, Phone, Camera } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-white border-t border-[#f0f0f0] py-20 px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        <footer className="bg-white border-t border-[#f0f0f0] py-20 px-6 sm:px-10 md:px-16">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:place-items-center md:grid-cols-2 lg:grid-cols-4 gap-5">
                 {/* Logo and Subscribe */}
-                <div className="md:col-span-1 flex flex-col gap-2">
+                <div className="md:col-span-1 flex flex-col gap-2 items-center text-center lg:items-start lg:text-left">
                     <div className="flex items-center gap-3">
                         <img src="/logo.png" alt="Logo" className="h-18 w-auto" />
                         <h2 className="text-xl font-medium text-[#333]">PaperPedia</h2>
@@ -26,7 +26,7 @@ const Footer = () => {
                 </div>
 
                 {/* Links */}
-                <div className="flex flex-col gap-2 text-sm text-[#999]">
+                <div className="flex flex-col gap-2 text-sm text-[#999] items-center text-center lg:items-start lg:text-left">
                     <h3 className="font-medium text-[#333] text-lg mb-2">Navigation</h3>
                     <a href="/">Home</a>
                     <a href="/about">About</a>
@@ -36,7 +36,7 @@ const Footer = () => {
                 </div>
 
                 {/* Social */}
-                <div className="flex flex-col gap-2 text-sm text-[#999]">
+                <div className="flex flex-col gap-2 text-sm text-[#999] items-center text-center lg:items-start lg:text-left">
                     <h3 className="font-medium text-[#333] text-lg mb-2">Connect</h3>
                     <a href="https://linkedin.com" target="_blank" className="flex items-center gap-2">
                         <Linkedin className="w-4 h-4" /> LinkedIn
@@ -50,11 +50,15 @@ const Footer = () => {
                 </div>
 
                 {/* Address */}
-                <div className="flex flex-col gap-2 text-sm text-[#999]">
+                <div className="flex flex-col gap-2 text-sm text-[#999] items-center text-center lg:items-start lg:text-left">
                     <h3 className="font-medium text-[#333] text-lg mb-2">Contact</h3>
                     <p>123 Research Street<br />Paper City, AI 400001</p>
-                    <p><Phone className="w-4 h-4" /> +919608532294</p>
-                    <p><Camera className="w-4 h-4" /> support@paperpedia.com</p>
+                    <p className="flex items-center gap-2">
+                        <Phone className="w-4 h-4" /> +919608532294
+                    </p>
+                    <p className="flex items-center gap-2">
+                        <Camera className="w-4 h-4" /> support@paperpedia.com
+                    </p>
                 </div>
             </div>
 

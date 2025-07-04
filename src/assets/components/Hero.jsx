@@ -1,12 +1,15 @@
 import { Upload } from 'lucide-react';
-import { motion } from 'framer-motion';
-
-const features = [
-    'Clarity', 'Reliability', 'Growth', 'Confidence',
-    'Empowerment', 'Simplicity', 'Transparency', 'Expertise'
-];
+import { useScroll, useTransform, motion } from 'framer-motion';
+import { useRef } from 'react';
 
 const Hero = () => {
+
+    const scrollRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: scrollRef,
+        offset: ["start end", "end center"]
+    });
+
     return (
         <section className="relative min-h-[100vh] bg-white overflow-hidden px-6 text-center">
 
@@ -27,7 +30,7 @@ const Hero = () => {
                 className="relative z-10"
                 initial={{ opacity: 0, y: 200 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
             >
 
                 {/* Top Content */}
@@ -62,40 +65,40 @@ const Hero = () => {
                 </div>
 
                 {/* Floating Features & Center Image */}
-                <div className="relative z-10 flex flex-col items-center">
+                <div ref={scrollRef} className="relative z-10 w-full max-w-4xl mx-auto aspect-[5/4] sm:aspect-[16/9] lg:aspect-[21/8]">
                     {/* Floating Tags */}
                     {[
-                        { text: 'Summarization', top: '5%', left: '10%', rotate: '-5deg' },
+                        { text: 'Summarization', top: '5%', left: '13%', rotate: '-5deg' },
                         { text: 'Insight', top: '10%', left: '75%', rotate: '4deg' },
-                        { text: 'Discovery', top: '25%', left: '18%', rotate: '2deg' },
+                        { text: 'Discovery', top: '25%', left: '5%', rotate: '2deg' },
                         { text: 'Context', top: '30%', left: '90%', rotate: '-3deg' },
                         { text: 'Citations', top: '45%', left: '25%', rotate: '-2deg' },
                         { text: 'Exploration', top: '50%', left: '77%', rotate: '3deg' },
                         { text: 'Navigation', top: '65%', left: '15%', rotate: '1deg' },
                         { text: 'Trends', top: '70%', left: '85%', rotate: '-1deg' }
                     ].map(({ text, top, left, rotate }, idx) => (
-                        <div
+                        <motion.div
                             key={idx}
-                            className="absolute bg-white shadow-md rounded-md px-4 py-2 text-sm text-[#787878] border-[#fcefda]  border"
+                            className="absolute mx-auto sm:mx-0 bg-white shadow-md rounded px-4 py-2 text-xs sm:text-sm md:text-base text-[#787878] border border-[#fcefda]"
                             style={{
                                 top,
-                                left,
-                                transform: `translateX(-50%) rotate(${rotate})`,
+                                left: useTransform(scrollYProgress, [0, 1], [left, left <= '50%' ? '0%' : '90%']),
+                                rotate: useTransform(scrollYProgress, [0, 1], [rotate, '0deg']),
+                                transform: `translateX(-50%)`,
                                 zIndex: 10,
                             }}
                         >
                             {text}
-                        </div>
+                        </motion.div>
                     ))}
 
                     {/* Centered Image */}
-                    <div className="relative w-full max-w-md z-20">
-                        <img
-                            src="/center.png"
-                            alt="Example"
-                            className="w-full object-contain drop-shadow-xl"
-                        />
-                    </div>
+                    <img
+                        src="/center.png"
+                        alt="Example"
+                        className="absolute inset-0 w-full h-full object-contain drop-shadow-xl z-9"
+                    />
+
                 </div>
             </motion.div>
         </section >

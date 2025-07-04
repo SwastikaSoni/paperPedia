@@ -31,7 +31,7 @@ const Navbar = () => {
 
             {/* Center - Nav Links */}
             <ul className="hidden md:flex gap-6 text-sm font-normal">
-                <li><Link to="/" className="nav-link">Dashboard</Link></li>
+                <li><Link to="/" className="nav-link">Home</Link></li>
                 <li><Link to="/about" className="nav-link">About</Link></li>
                 <li><Link to="/profile" className="nav-link">Profile</Link></li>
                 <li><Link to="/community" className="nav-link">Community</Link></li>
@@ -68,7 +68,7 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div className="absolute top-full left-0 w-full bg-white shadow-md md:hidden z-50">
                     <ul className="flex flex-col items-start gap-4 px-4 py-2">
-                        <li><Link to="/" className="nav-link w-full">Dashboard</Link></li>
+                        <li><Link to="/" className="nav-link w-full">Home</Link></li>
                         <li><Link to="/about" className="nav-link w-full">About</Link></li>
                         <li><Link to="/profile" className="nav-link w-full">Profile</Link></li>
                         <li><Link to="/community" className="nav-link w-full">Community</Link></li>
