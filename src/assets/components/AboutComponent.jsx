@@ -8,7 +8,34 @@ const AboutComponent = () => {
         { value: '300+', label: 'Researchers Joined' },
         { value: '50+', label: 'Institutions Reached' },
         { value: '20+', label: 'AI Tools Integrated' },
-        { value: '2024', label: 'Launched In' },
+        { value: '2025', label: 'Launched In' },
+    ];
+
+    const steps = [
+        {
+            number: '1',
+            title: 'Discovery',
+            description:
+                'We begin by understanding your goals, background, and preferences. This helps us tailor your experience and suggestions.',
+        },
+        {
+            number: '2',
+            title: 'Smart Strategy',
+            description:
+                'Our AI suggests personalized pathways — summarizing, recommending, and tracking relevant academic papers.',
+        },
+        {
+            number: '3',
+            title: 'Implementation',
+            description:
+                'Start reading, saving, and discussing papers that align with your research — all in one place.',
+        },
+        {
+            number: '4',
+            title: 'Refinement & Insights',
+            description:
+                'We learn and evolve with you — optimizing suggestions and showing trends in your research journey.',
+        },
     ];
 
     return (
@@ -174,18 +201,54 @@ const AboutComponent = () => {
 
 
 
-            {/* Two Column Layout */}
+            {/* Insights */}
             <div >
                 <hr className="border-t border-gray-200 mb-10" />
                 <div className="max-w-7xl mx-auto my-13 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-y-10">
                     {stats.map(({ value, label }, i) => (
                         <div key={i}>
-                            <h3 className="text-3xl font-semibold text-gray-900">{value}</h3>
+                            <h3 className="text-3xl font-semibold text-black">{value}</h3>
                             <p className="text-sm text-gray-600 mt-2">{label}</p>
                         </div>
                     ))}
                 </div>
             </div>
+
+
+            <div className="max-w-7xl mx-auto my-20 grid grid-cols-1 lg:grid-cols-3 gap-10">
+                {/* Left Intro */}
+                <div className="bg-[#2e7a66] text-white rounded-2xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <div className="z-10 relative">
+                        <h2 className="text-2xl sm:text-xl font-semibold mb-4">
+                            We believe investing should be clear and intentional.
+                        </h2>
+                        <p className="text-sm sm:text-base font-light">
+                            Successful investing starts with understanding market trends and leveraging data-driven insights.
+                        </p>
+                    </div>
+
+                    {/* Image at bottom, rotated */}
+                    <img
+                        src="/graph.png"
+                        alt="Graph on laptop"
+                        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 rotate-[7deg] origin-bottom w-[120%] max-w-none z-0"
+                    />
+                </div>
+
+                {/* Right Steps */}
+                <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {steps.map(({ number, title, description }, i) => (
+                        <div key={i} className="bg-[#fff8f4] p-6 rounded-xl shadow-sm border border-[#f0e9e0]">
+                            <div className="w-8 h-8 bg-white shadow text-center font-medium rounded-md mb-3 text-[#444]">
+                                {number}
+                            </div>
+                            <h3 className="font-semibold text-lg text-[#222] mb-1 text-left">{title}</h3>
+                            <p className="text-sm text-[#666] text-left">{description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
         </section>
     );
 };

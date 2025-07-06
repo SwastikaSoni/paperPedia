@@ -19,7 +19,7 @@ const Navbar = () => {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 px-4 py-1 w-full flex items-center justify-between transition-all duration-300
-                ${isScrolled ? 'bg-[#fefcfa] border-b border-[#fff6f1] shadow-sm' : 'bg-white border-b border-transparent'}`}
+                ${isScrolled ? 'bg-[#fff8f4] border-b border-[#fff6f1] shadow-sm' : 'bg-white border-b border-transparent'}`}
         >
             {/* Left Section - Logo */}
             <div className="flex items-center gap-4">
