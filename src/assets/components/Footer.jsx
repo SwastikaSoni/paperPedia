@@ -52,9 +52,9 @@ const Footer = () => {
                 {/* Address */}
                 <div className="flex flex-col gap-2 text-sm text-[#999] items-center text-center lg:items-start lg:text-left">
                     <h3 className="font-medium text-[#333] text-lg mb-2">Contact</h3>
-                    <p>123 Research Street<br />Paper City, AI 400001</p>
+                    <p>42, MG Road<br />Bengaluru, KA 560001</p>
                     <p className="flex items-center gap-2">
-                        <Phone className="w-4 h-4" /> +919608532294
+                        <Phone className="w-4 h-4" /> +91 98765 43210
                     </p>
                     <p className="flex items-center gap-2">
                         <Camera className="w-4 h-4" /> support@paperpedia.com

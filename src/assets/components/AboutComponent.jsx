@@ -68,7 +68,7 @@ const AboutComponent = () => {
     ];
 
     return (
-        <section className="relative min-h-[100vh] bg-white overflow-hidden px-6 text-center mt-24">
+        <section className="relative min-h-[100vh] bg-white overflow-hidden px-6 text-center">
             {/* Background Image */}
             <div className="absolute top-0 left-0 w-full h-full z-0">
                 <img
@@ -85,7 +85,7 @@ const AboutComponent = () => {
                 {/* Top Content */}
                 <div className="relative z-10 pt-20">
                     <AnimatedSection>
-                        <div className="flex gap-4 flex-wrap justify-center mb-[40px] z-1">
+                        <div className="flex gap-4 flex-wrap justify-center mb-[40px] z-1 mt-20">
                             <button
                                 className="border text-[#787878] font-small py-1 px-4 rounded-lg text-xs bg-white border-[#f7e7cc] flex items-center gap-2"
                                 style={{
